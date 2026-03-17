@@ -1,0 +1,87 @@
+# AutoJob 配置文件
+
+## 数据库
+database:
+  path: "data/autojob.db"
+
+## 日志
+logging:
+  level: "INFO"
+  file: "logs/autojob.log"
+  max_size: 10485760  # 10MB
+  backup_count: 5
+
+## 浏览器设置
+browser:
+  headless: false
+  timeout: 30000
+  implicit_wait: 10
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+
+## 代理设置
+proxy:
+  enabled: false
+  pool: []
+
+## 投递设置
+application:
+  delay_min: 3000  # ms
+  delay_max: 8000  # ms
+  max_retries: 3
+  retry_wait: 60000  # ms
+
+## LLM设置
+llm:
+  provider: "minimax"  # openai / minimax
+  model: "MiniMax-M2.5"
+  api_key: ""
+  temperature: 0.7
+
+## 平台配置
+platforms:
+  boss:
+    enabled: true
+    login_url: "https://www.zhipin.com/"
+    search_url: "https://www.zhipin.com/web/geek/job"
+    
+  lagou:
+    enabled: true
+    login_url: "https://www.lagou.com/"
+    search_url: "https://www.lagou.com/jobs/list_"
+    
+  liepin:
+    enabled: true
+    login_url: "https://www.liepin.com/"
+    search_url: "https://www.liepin.com/jobs/"
+    
+  jobsdb:
+    enabled: true
+    login_url: "https://www.jobsdb.com/"
+    search_url: "https://www.jobsdb.com/job-search/"
+    
+  linkedin:
+    enabled: true
+    login_url: "https://www.linkedin.com/"
+    search_url: "https://www.linkedin.com/jobs/"
+
+## 用户设置
+user:
+  resume_path: "data/resume.pdf"
+  cover_letter_template: "config/cover_letter_template.txt"
+  keywords: []
+  locations: []
+  salary_min: 0
+  salary_max: 0
+
+## 通知设置
+notification:
+  telegram:
+    enabled: true
+    chat_id: ""
+  email:
+    enabled: false
+    smtp: ""
+    port: 587
+    username: ""
+    password: ""
+    to: ""
