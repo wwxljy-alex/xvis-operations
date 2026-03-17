@@ -1,0 +1,27 @@
+# AutoJob 依赖
+
+# 核心
+PyYAML>=6.0
+
+# 浏览器自动化 (二选一)
+playwright>=1.40.0
+# selenium>=4.0.0
+
+# HTTP请求
+requests>=2.28.0
+
+# LLM API
+openai>=1.0.0
+
+# 数据库 (Python内置sqlite3)
+# 无需额外安装
+
+# 工具
+python-dotenv>=1.0.0
+Pillow>=10.0.0  # 图片处理
+
+# 可选：代理服务
+# luminati-proxy>=1.0.0
+
+# 可选：验证码
+# 2captcha-python>=1.0.0
