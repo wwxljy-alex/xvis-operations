@@ -2,21 +2,18 @@
 
 ## 数据库
 database:
-  path: "data/autojob.db"
+  path: "/home/ubuntu/clawd/auto_job/data/autojob.db"
 
 ## 日志
 logging:
   level: "INFO"
-  file: "logs/autojob.log"
-  max_size: 10485760  # 10MB
-  backup_count: 5
+  file: "/home/ubuntu/clawd/auto_job/logs/autojob.log"
 
 ## 浏览器设置
 browser:
-  headless: false
+  headless: false  # 生产环境设为true
   timeout: 30000
   implicit_wait: 10
-  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
 
 ## 代理设置
 proxy:
@@ -25,63 +22,49 @@ proxy:
 
 ## 投递设置
 application:
-  delay_min: 3000  # ms
-  delay_max: 8000  # ms
+  delay_min: 5000  # ms
+  delay_max: 12000  # ms
   max_retries: 3
-  retry_wait: 60000  # ms
+  retry_wait: 60000
 
-## LLM设置
+## LLM设置 (填写你的API Key)
 llm:
-  provider: "minimax"  # openai / minimax
+  provider: "minimax"  # openai 或 minimax
   model: "MiniMax-M2.5"
-  api_key: ""
+  api_key: ""  # 在这里填写你的API Key
   temperature: 0.7
 
 ## 平台配置
 platforms:
   boss:
     enabled: true
-    login_url: "https://www.zhipin.com/"
-    search_url: "https://www.zhipin.com/web/geek/job"
-    
   lagou:
-    enabled: true
-    login_url: "https://www.lagou.com/"
-    search_url: "https://www.lagou.com/jobs/list_"
-    
+    enabled: false
   liepin:
-    enabled: true
-    login_url: "https://www.liepin.com/"
-    search_url: "https://www.liepin.com/jobs/"
-    
+    enabled: false
   jobsdb:
-    enabled: true
-    login_url: "https://www.jobsdb.com/"
-    search_url: "https://www.jobsdb.com/job-search/"
-    
+    enabled: false
   linkedin:
-    enabled: true
-    login_url: "https://www.linkedin.com/"
-    search_url: "https://www.linkedin.com/jobs/"
+    enabled: false
 
-## 用户设置
+## 用户设置 (根据你的需求修改)
 user:
-  resume_path: "data/resume.pdf"
-  cover_letter_template: "config/cover_letter_template.txt"
-  keywords: []
-  locations: []
-  salary_min: 0
-  salary_max: 0
+  resume_path: "/home/ubuntu/clawd/auto_job/data/resume.pdf"
+  keywords:
+    - "Web3"
+    - "产品经理"
+    - "BD"
+    - "Business Development"
+  locations:
+    - "深圳"
+    - "香港"
+  salary_min: 20  # K/月
+  salary_max: 50   # K/月
+  experience_min: 1  # 年
 
 ## 通知设置
 notification:
   telegram:
-    enabled: true
-    chat_id: ""
-  email:
     enabled: false
-    smtp: ""
-    port: 587
-    username: ""
-    password: ""
-    to: ""
+    token: ""
+    chat_id: ""

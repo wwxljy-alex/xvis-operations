@@ -7,7 +7,7 @@ import time
 import json
 import random
 from typing import Dict, List, Optional
-from ..core.base import BasePlatform
+from core.base import BasePlatform
 
 
 class BossPlatformEnhanced(BasePlatform):
